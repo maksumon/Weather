@@ -8,6 +8,6 @@
 import Foundation
 
 struct Condition: Codable {
-    let text, icon: String
-    let code: Int
+    let text, icon: String?
+    let code: Int?
 }

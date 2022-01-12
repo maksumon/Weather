@@ -8,7 +8,7 @@
 import Foundation
 
 struct Weather: Codable {
-    let location: Location
-    let current: Current
-    let forecast: Forecast
+    let location: Location?
+    let current: Current?
+    let forecast: Forecast?
 }
