@@ -47,6 +47,7 @@ struct CurrentWeatherConditionView: View {
                 VStack(alignment: .center) {
                     Text("\(currentWeather.windDir!) \(currentWeather.windKph!, specifier: "%.1f") km/h")
                         .font(.system(size: 16, weight: .bold, design: .default))
+                        .multilineTextAlignment(.center)
                     Text("Wind")
                         .font(.system(size: 14))
                 }
@@ -61,6 +62,7 @@ struct CurrentWeatherConditionView: View {
                         .font(.system(size: 16, weight: .bold, design: .default))
                     Text("Chance of Rain")
                         .font(.system(size: 14))
+                        .multilineTextAlignment(.center)
                 }
                 VStack(alignment: .center) {
                     Text("\(currentDay.maxtempC!, specifier: "%.f")°/\(currentDay.mintempC!, specifier: "%.f")°")
