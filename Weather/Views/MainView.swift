@@ -11,6 +11,7 @@ import SwiftUIRefresh
 struct MainView: View {
     @State private var showMenu = false
     @State private var isPullToRefresh = false
+    @State private var pushLocationSearchView = false
     @ObservedObject var viewModel = WeatherViewModel()
     
     var body: some View {
@@ -64,6 +65,14 @@ struct MainView: View {
                             .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                             .frame(width: geometry.size.width)
                     }
+                    NavigationLink(
+                        destination: LocationSearchView(),
+                        isActive: self.$pushLocationSearchView
+                    ) {
+                        EmptyView()
+                    }
+                    .frame(width: 0, height: 0)
+                    .disabled(true)
                 }
             }
             .navigationBarTitle(
@@ -87,7 +96,7 @@ struct MainView: View {
                     Button(
                         action: {
                             withAnimation {
-                                self.showMenu.toggle()
+                                self.pushLocationSearchView = true
                             }
                         }
                     ) {
