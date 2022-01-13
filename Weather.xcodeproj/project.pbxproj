@@ -27,6 +27,13 @@
 		9F06A5DD278DE51700C7E5B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06A5DC278DE51700C7E5B4 /* Constants.swift */; };
 		9F06A5E0278DE7B300C7E5B4 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06A5DF278DE7B300C7E5B4 /* APIHelper.swift */; };
 		9F06A5E3278DEB9700C7E5B4 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06A5E2278DEB9700C7E5B4 /* WeatherViewModel.swift */; };
+		9F269263278F3C4B0073580F /* weather.db in Resources */ = {isa = PBXBuildFile; fileRef = 9F269262278F3C4B0073580F /* weather.db */; };
+		9F269266278F3CA90073580F /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 9F269265278F3CA90073580F /* GRDB */; };
+		9F269268278F3CDA0073580F /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F269267278F3CDA0073580F /* DBHelper.swift */; };
+		9F26926A278F425C0073580F /* AirQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F269269278F425C0073580F /* AirQuality.swift */; };
+		9F26926C278F46240073580F /* AirQualityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26926B278F46240073580F /* AirQualityDetailsView.swift */; };
+		9F26926E278F46550073580F /* AirQualityDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26926D278F46550073580F /* AirQualityDetailsViewModel.swift */; };
+		9F269270278F4B4D0073580F /* AirQualityDetailsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26926F278F4B4D0073580F /* AirQualityDetailsItemView.swift */; };
 		9F8C839F278E8B2C002C4C93 /* CurrentWeatherConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C839E278E8B2C002C4C93 /* CurrentWeatherConditionView.swift */; };
 		9F8C83A2278E8EF3002C4C93 /* NetworkImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9F8C83A1278E8EF3002C4C93 /* NetworkImage */; };
 		9F8C83B0278EC5A6002C4C93 /* HourlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C83AF278EC5A6002C4C93 /* HourlyView.swift */; };
@@ -34,6 +41,7 @@
 		9F8C83B5278ED6FA002C4C93 /* AirQualitySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C83B4278ED6FA002C4C93 /* AirQualitySummaryView.swift */; };
 		9F8C83B7278EDAD1002C4C93 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C83B6278EDAD1002C4C93 /* ForecastView.swift */; };
 		9F8C83B9278EDD4E002C4C93 /* ForecastsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C83B8278EDD4E002C4C93 /* ForecastsView.swift */; };
+		9FC15CB1278FD1C5008131C5 /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC15CB0278FD1C5008131C5 /* LocationListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,12 +85,19 @@
 		9F06A5DC278DE51700C7E5B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F06A5DF278DE7B300C7E5B4 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		9F06A5E2278DEB9700C7E5B4 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		9F269262278F3C4B0073580F /* weather.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = weather.db; sourceTree = "<group>"; };
+		9F269267278F3CDA0073580F /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		9F269269278F425C0073580F /* AirQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQuality.swift; sourceTree = "<group>"; };
+		9F26926B278F46240073580F /* AirQualityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityDetailsView.swift; sourceTree = "<group>"; };
+		9F26926D278F46550073580F /* AirQualityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityDetailsViewModel.swift; sourceTree = "<group>"; };
+		9F26926F278F4B4D0073580F /* AirQualityDetailsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityDetailsItemView.swift; sourceTree = "<group>"; };
 		9F8C839E278E8B2C002C4C93 /* CurrentWeatherConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherConditionView.swift; sourceTree = "<group>"; };
 		9F8C83AF278EC5A6002C4C93 /* HourlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyView.swift; sourceTree = "<group>"; };
 		9F8C83B2278ECD14002C4C93 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		9F8C83B4278ED6FA002C4C93 /* AirQualitySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualitySummaryView.swift; sourceTree = "<group>"; };
 		9F8C83B6278EDAD1002C4C93 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		9F8C83B8278EDD4E002C4C93 /* ForecastsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastsView.swift; sourceTree = "<group>"; };
+		9FC15CB0278FD1C5008131C5 /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F8C83A2278E8EF3002C4C93 /* NetworkImage in Frameworks */,
+				9F269266278F3CA90073580F /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +159,7 @@
 				9F06A5C6278DDA2600C7E5B4 /* Models */,
 				9F06A59C278DD7C500C7E5B4 /* WeatherApp.swift */,
 				9F06A5A0278DD7CA00C7E5B4 /* Assets.xcassets */,
+				9F269262278F3C4B0073580F /* weather.db */,
 				9F06A5A2278DD7CA00C7E5B4 /* Preview Content */,
 			);
 			path = Weather;
@@ -185,6 +202,7 @@
 				9F06A5D3278DDAFA00C7E5B4 /* Condition.swift */,
 				9F06A5D5278DDB0F00C7E5B4 /* Current.swift */,
 				9F06A5D7278DDB2400C7E5B4 /* Weather.swift */,
+				9F269269278F425C0073580F /* AirQuality.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				9F06A5DF278DE7B300C7E5B4 /* APIHelper.swift */,
+				9F269267278F3CDA0073580F /* DBHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -210,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				9F06A5E2278DEB9700C7E5B4 /* WeatherViewModel.swift */,
+				9F26926D278F46550073580F /* AirQualityDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -222,6 +242,7 @@
 				9F8C83B4278ED6FA002C4C93 /* AirQualitySummaryView.swift */,
 				9F8C83B6278EDAD1002C4C93 /* ForecastView.swift */,
 				9F8C83B8278EDD4E002C4C93 /* ForecastsView.swift */,
+				9F26926F278F4B4D0073580F /* AirQualityDetailsItemView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -230,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				9F06A59E278DD7C500C7E5B4 /* MainView.swift */,
+				9F26926B278F46240073580F /* AirQualityDetailsView.swift */,
+				9FC15CB0278FD1C5008131C5 /* LocationListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +283,7 @@
 			name = Weather;
 			packageProductDependencies = (
 				9F8C83A1278E8EF3002C4C93 /* NetworkImage */,
+				9F269265278F3CA90073580F /* GRDB */,
 			);
 			productName = Weather;
 			productReference = 9F06A599278DD7C500C7E5B4 /* Weather.app */;
@@ -335,6 +359,7 @@
 			mainGroup = 9F06A590278DD7C500C7E5B4;
 			packageReferences = (
 				9F8C83A0278E8EF3002C4C93 /* XCRemoteSwiftPackageReference "NetworkImage" */,
+				9F269264278F3CA90073580F /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
 			productRefGroup = 9F06A59A278DD7C500C7E5B4 /* Products */;
 			projectDirPath = "";
@@ -352,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F269263278F3C4B0073580F /* weather.db in Resources */,
 				9F06A5A4278DD7CA00C7E5B4 /* Preview Assets.xcassets in Resources */,
 				9F06A5A1278DD7CA00C7E5B4 /* Assets.xcassets in Resources */,
 			);
@@ -385,20 +411,26 @@
 				9F06A5D6278DDB0F00C7E5B4 /* Current.swift in Sources */,
 				9F06A5D4278DDAFA00C7E5B4 /* Condition.swift in Sources */,
 				9F8C839F278E8B2C002C4C93 /* CurrentWeatherConditionView.swift in Sources */,
+				9F26926E278F46550073580F /* AirQualityDetailsViewModel.swift in Sources */,
 				9F06A5D8278DDB2400C7E5B4 /* Weather.swift in Sources */,
 				9F06A59F278DD7C500C7E5B4 /* MainView.swift in Sources */,
 				9F06A5C8278DDA5000C7E5B4 /* Location.swift in Sources */,
 				9F06A59D278DD7C500C7E5B4 /* WeatherApp.swift in Sources */,
+				9F269268278F3CDA0073580F /* DBHelper.swift in Sources */,
 				9F06A5DD278DE51700C7E5B4 /* Constants.swift in Sources */,
+				9F26926A278F425C0073580F /* AirQuality.swift in Sources */,
 				9F8C83B7278EDAD1002C4C93 /* ForecastView.swift in Sources */,
 				9F06A5CC278DDA9F00C7E5B4 /* Day.swift in Sources */,
 				9F8C83B0278EC5A6002C4C93 /* HourlyView.swift in Sources */,
 				9F8C83B3278ECD14002C4C93 /* StringExtensions.swift in Sources */,
 				9F06A5E3278DEB9700C7E5B4 /* WeatherViewModel.swift in Sources */,
 				9F06A5CA278DDA7B00C7E5B4 /* Hour.swift in Sources */,
+				9F26926C278F46240073580F /* AirQualityDetailsView.swift in Sources */,
 				9F06A5D0278DDAD200C7E5B4 /* Forecastday.swift in Sources */,
 				9F06A5DB278DDD6400C7E5B4 /* API.swift in Sources */,
+				9FC15CB1278FD1C5008131C5 /* LocationListView.swift in Sources */,
 				9F06A5CE278DDAB900C7E5B4 /* Astro.swift in Sources */,
+				9F269270278F4B4D0073580F /* AirQualityDetailsItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +518,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -541,7 +573,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -566,6 +598,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,6 +627,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -741,6 +775,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9F269264278F3CA90073580F /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		9F8C83A0278E8EF3002C4C93 /* XCRemoteSwiftPackageReference "NetworkImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/NetworkImage.git";
@@ -752,6 +794,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9F269265278F3CA90073580F /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F269264278F3CA90073580F /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
 		9F8C83A1278E8EF3002C4C93 /* NetworkImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9F8C83A0278E8EF3002C4C93 /* XCRemoteSwiftPackageReference "NetworkImage" */;

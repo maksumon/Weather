@@ -9,6 +9,8 @@ import Foundation
 
 class WeatherViewModel : ObservableObject {
     @Published var weather: Weather?
+    @Published var isLoading = false
+    
     private let apiHelper = APIHelper()
     
     func fetchWeather() {
@@ -24,13 +26,17 @@ class WeatherViewModel : ObservableObject {
             URLQueryItem(name: "alerts", value: "no")
         ]
 
+        self.isLoading = true
+        
         apiHelper.request(fromURL: urlComponents.url!) { (result: Result<Weather, Error>) in
             switch result {
             case .success(let weather):
                 debugPrint("We got a successful result with: \(weather)")
                 self.weather = weather
+                self.isLoading = false
             case .failure(let error):
                 debugPrint("We got a failure trying to get the weather. The error we got was: \(error.localizedDescription)")
+                self.isLoading = false
             }
          }
     }
