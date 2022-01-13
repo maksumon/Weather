@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftUIRefresh
+import SwiftLocation
 
 struct MainView: View {
     @State private var showMenu = false
@@ -106,6 +107,9 @@ struct MainView: View {
                 )
             )
             .onAppear {
+                SwiftLocation.gpsLocation().then {
+                    debugPrint("Location is \(String(describing: $0.location))")
+                }
                 self.viewModel.fetchWeather()
             }
         }
