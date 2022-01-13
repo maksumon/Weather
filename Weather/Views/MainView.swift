@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import SwiftUIRefresh
 
 struct MainView: View {
-    @State var showMenu = false
+    @State private var showMenu = false
+    @State private var isPullToRefresh = false
     @ObservedObject var viewModel = WeatherViewModel()
     
     var body: some View {
         NavigationView {
-            
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     List {
@@ -48,6 +49,10 @@ struct MainView: View {
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .offset(x: self.showMenu ? geometry.size.width/1.5 : 0)
                     .disabled(self.showMenu ? true : false)
+                    .pullToRefresh(isShowing: $isPullToRefresh) {
+                        self.viewModel.fetchWeather()
+                        self.isPullToRefresh = false
+                    }
                     if self.showMenu {
                         LocationListView()
                             .frame(width: geometry.size.width/1.5)
