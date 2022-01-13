@@ -23,7 +23,7 @@ struct LocationListView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(red: 32/255, green: 32/255, blue: 32/255))
         .edgesIgnoringSafeArea(.all)
-        .navigationBarTitle("Weather Around", displayMode: .inline)
+        .navigationBarTitle("Weather Around")
     }
 }
 
