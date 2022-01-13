@@ -38,7 +38,7 @@ class DBHelper {
     func fetchAirQualityDetails() -> [AirQuality]? {
         do {
             let airQualities = try DBHelper.shared.dbQueue!.read { db in
-                try AirQuality.fetchAll(db, sql: "SELECT * FROM air_quality_details")
+                try AirQuality.fetchAll(db, sql: "SELECT * FROM air_quality_detail")
             }
             return airQualities;
         } catch {
