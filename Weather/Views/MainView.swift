@@ -91,7 +91,7 @@ struct MainView: View {
                             }
                         }
                     ) {
-                        Image(systemName: "add")
+                        Image(systemName: "plus")
                             .imageScale(.large)
                     }
                 )
