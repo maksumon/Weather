@@ -1,5 +1,5 @@
 //
-//  LocationListView.swift
+//  SideMenuView.swift
 //  Weather
 //
 //  Created by Mohammad Ashraful Kabir on 13/01/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LocationListView: View {
+struct SideMenuView: View {
     var body: some View {
         List {
             VStack(alignment: .leading) {
@@ -29,6 +29,6 @@ struct LocationListView: View {
 
 struct LocationListView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationListView()
+        SideMenuView()
     }
 }

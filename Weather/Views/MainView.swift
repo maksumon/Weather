@@ -54,7 +54,7 @@ struct MainView: View {
                         self.isPullToRefresh = false
                     }
                     if self.showMenu {
-                        LocationListView()
+                        SideMenuView()
                             .frame(width: geometry.size.width/1.5)
                             .transition(.move(edge: .leading))
                     }
