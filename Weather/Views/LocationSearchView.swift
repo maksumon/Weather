@@ -14,19 +14,28 @@ struct LocationSearchView: View {
     
     var body: some View {
         VStack {
-            TextField(
-                "Search Location Here",
-                text: $text,
-                onCommit: {
-                    if !self.text.isEmpty {
-                        viewModel.searchLocation(query: self.text)
+            HStack {
+                TextField(
+                    "Search Location Here",
+                    text: $text,
+                    onCommit: {
+                        if !self.text.isEmpty {
+                            viewModel.searchLocation(query: self.text)
+                        }
+                    }
+                ).textFieldStyle(.roundedBorder)
+                if !self.text.isEmpty {
+                    Button(action: {
+                        self.text = ""
+                    }) {
+                        Image(systemName: "multiply.circle")
                     }
                 }
-            ).textFieldStyle(.roundedBorder).padding()
+            }.padding()
             Spacer()
             List {
                 if (viewModel.cities.count > 0) {
-                    ForEach(0..<viewModel.cities.count) { i in
+                    ForEach(0..<viewModel.cities.count, id: \.self) { i in
                         Text("\(viewModel.cities[i].name), \(viewModel.cities[i].country)")
                     }
                 }
