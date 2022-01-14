@@ -6,12 +6,58 @@
 //
 
 import Foundation
+import SwiftLocation
 
 class WeatherViewModel : ObservableObject {
     @Published var weather: Weather?
     @Published var isLoading = false
+    @Published var currentCity = ""
     
     private let apiHelper = APIHelper()
+    
+    func getCurrentLocationAndFetchWeather() {
+        SwiftLocation.gpsLocation().then {
+            debugPrint("Location is \(String(describing: $0.location))")
+            let service = Geocoder.Apple(
+                lat: ($0.location?.coordinate.latitude)!,
+                lng: ($0.location?.coordinate.longitude)!
+            )
+            SwiftLocation.geocodeWith(service).then { result in
+                // Different services, same expected output [GeoLocation]
+                switch result {
+                case .success(let data):
+                    let firstResult: GeoLocation = data.first!
+                    print(firstResult.coordinates)
+                    print(firstResult.info[.formattedAddress]!!)
+                    
+                    guard let locality = firstResult.info[.locality] else { return }
+                    
+                    if locality != nil {
+                        let dictCity = [
+                            "name": locality!,
+                            "country": firstResult.info[.country]!!,
+                            "latitude": firstResult.coordinates.latitude,
+                            "longitude": firstResult.coordinates.longitude
+                        ] as [String : Any]
+                        
+                        do {
+                            let jsonCity = try JSONSerialization.data(withJSONObject: dictCity, options: .prettyPrinted)
+                            let city = try JSONDecoder().decode(City.self, from: Data(jsonCity))
+                            
+                            debugPrint("Current location: \(city)")
+                            
+                            self.currentCity = city.name
+                            self.fetchWeather(city: self.currentCity)
+                        } catch {
+                            debugPrint("City Decoding Error: \(error)")
+                        }
+                    }
+                case .failure(let error):
+                    debugPrint("Reverse geocode error: \(error)")
+                }
+            }
+        }
+    }
     
     func fetchWeather(city: String) {
         self.isLoading = true

@@ -13,6 +13,7 @@ struct MainView: View {
     @State private var showMenu = false
     @State private var isPullToRefresh = false
     @State private var pushLocationSearchView = false
+    
     @ObservedObject var viewModel = WeatherViewModel()
     
     var body: some View {
@@ -52,7 +53,7 @@ struct MainView: View {
                     .offset(x: self.showMenu ? geometry.size.width/1.5 : 0)
                     .disabled(self.showMenu ? true : false)
                     .pullToRefresh(isShowing: $isPullToRefresh) {
-                        self.viewModel.fetchWeather()
+                        self.viewModel.fetchWeather(city: viewModel.currentCity)
                         self.isPullToRefresh = false
                     }
                     if self.showMenu {
@@ -107,10 +108,7 @@ struct MainView: View {
                 )
             )
             .onAppear {
-                SwiftLocation.gpsLocation().then {
-                    debugPrint("Location is \(String(describing: $0.location))")
-                }
-                self.viewModel.fetchWeather()
+                viewModel.getCurrentLocationAndFetchWeather()
             }
         }
     }
