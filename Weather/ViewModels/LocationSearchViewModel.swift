@@ -56,7 +56,10 @@ class LocationSearchViewModel : ObservableObject {
                                         let jsonCity = try JSONSerialization.data(withJSONObject: dictCity, options: .prettyPrinted)
                                         let city = try JSONDecoder().decode(City.self, from: Data(jsonCity))
                                         
-                                        if self.cities.contains(where: { city in city.name == locality }) {
+                                        if self.cities.contains(where: { city in
+                                            city.name == dictCity["name"] as! String
+                                            && city.country == dictCity["country"] as! String })
+                                        {
                                             print("\(String(describing: locality)) exists in the array")
                                         } else {
                                             self.cities.append(city)
