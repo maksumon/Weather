@@ -13,20 +13,22 @@ class WeatherViewModel : ObservableObject {
     
     private let apiHelper = APIHelper()
     
-    func fetchWeather() {
+    func fetchWeather(city: String) {
+        self.isLoading = true
+        
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = API.BASE_URL
         urlComponents.path = "\(API.API_VERSION)\(API.FORCAST_ENDPOINT)"
         urlComponents.queryItems = [
             URLQueryItem(name: "key", value: Constants.WEATHER_API_KEY),
-            URLQueryItem(name: "q", value: "Dhaka"),
+            URLQueryItem(name: "q", value: city),
             URLQueryItem(name: "days", value: "3"),
             URLQueryItem(name: "aqi", value: "yes"),
             URLQueryItem(name: "alerts", value: "no")
         ]
-
-        self.isLoading = true
+        
+        debugPrint("Weather API URL: \(String(describing: urlComponents.url))")
         
         apiHelper.request(fromURL: urlComponents.url!) { (result: Result<Weather, Error>) in
             switch result {
