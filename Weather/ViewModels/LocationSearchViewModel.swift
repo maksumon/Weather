@@ -15,6 +15,8 @@ class LocationSearchViewModel : ObservableObject {
     func searchLocation(query: String) {
         self.isLoading = true
         
+        self.cities.removeAll()
+        
         let service = Autocomplete.Google(partialMatches: query)
         service.APIKey = Constants.GOOGLE_PLACES_API_KEY
 
@@ -38,12 +40,14 @@ class LocationSearchViewModel : ObservableObject {
                             if !places.isEmpty {
                                 guard let firstResult: GeoLocation = places.first! else { return }
                                 print(firstResult.coordinates)
-                                print((firstResult.info[.formattedAddress]!)!)
+                                print(firstResult.info[.formattedAddress]!!)
                                 
-                                if firstResult.info[.locality] != nil && firstResult.info[.locality] != "" {
+                                guard let locality = firstResult.info[.locality] else { return }
+                                
+                                if locality != nil {
                                     let dictCity = [
-                                        "name": (firstResult.info[.locality]!)!,
-                                        "country": (firstResult.info[.country]!)!,
+                                        "name": locality!,
+                                        "country": firstResult.info[.country]!!,
                                         "latitude": firstResult.coordinates.latitude,
                                         "longitude": firstResult.coordinates.longitude
                                     ] as [String : Any]
@@ -51,7 +55,13 @@ class LocationSearchViewModel : ObservableObject {
                                     do {
                                         let jsonCity = try JSONSerialization.data(withJSONObject: dictCity, options: .prettyPrinted)
                                         let city = try JSONDecoder().decode(City.self, from: Data(jsonCity))
-                                        self.cities.append(city)
+                                        
+                                        if self.cities.contains(where: { city in city.name == locality }) {
+                                            print("\(String(describing: locality)) exists in the array")
+                                        } else {
+                                            self.cities.append(city)
+                                        }
+                                        
                                         self.isLoading = false
                                     } catch {
                                         debugPrint("City Decoding Error: \(error)")
