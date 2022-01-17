@@ -47,6 +47,7 @@
 		9FC15CBE27901BD2008131C5 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 9FC15CBD27901BD2008131C5 /* SwiftLocation */; };
 		9FC15CC027909EDE008131C5 /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC15CBF27909EDE008131C5 /* LocationSearchViewModel.swift */; };
 		9FC15CC227909FA3008131C5 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC15CC127909FA3008131C5 /* City.swift */; };
+		9FC15CD427952AAC008131C5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC15CD327952AAC008131C5 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		9FC15CBA279016FA008131C5 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		9FC15CBF27909EDE008131C5 /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
 		9FC15CC127909FA3008131C5 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		9FC15CD327952AAC008131C5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 				9F26926B278F46240073580F /* AirQualityDetailsView.swift */,
 				9FC15CB0278FD1C5008131C5 /* SideMenuView.swift */,
 				9FC15CBA279016FA008131C5 /* LocationSearchView.swift */,
+				9FC15CD327952AAC008131C5 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				9FC15CC227909FA3008131C5 /* City.swift in Sources */,
 				9FC15CB1278FD1C5008131C5 /* SideMenuView.swift in Sources */,
 				9F06A5CE278DDAB900C7E5B4 /* Astro.swift in Sources */,
+				9FC15CD427952AAC008131C5 /* LoadingView.swift in Sources */,
 				9F269270278F4B4D0073580F /* AirQualityDetailsItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
