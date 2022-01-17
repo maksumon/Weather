@@ -15,6 +15,10 @@ class WeatherViewModel : ObservableObject {
     
     private let apiHelper = APIHelper()
     
+    init() {
+        getCurrentLocationAndFetchWeather()
+    }
+    
     func getCurrentLocationAndFetchWeather() {
         SwiftLocation.gpsLocation().then {
             debugPrint("Location is \(String(describing: $0.location))")
