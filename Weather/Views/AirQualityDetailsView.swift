@@ -12,18 +12,17 @@ struct AirQualityDetailsView: View {
     private let twoColumnGrid = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        List {
-            if (viewModel.airQualities != nil) {
-                ForEach(0..<viewModel.airQualities!.count) { i in
-                    Section {
-                        AirQualityDetailsItemView(airQuality: viewModel.airQualities![i])
+        LoadingView(isShowing: $viewModel.isLoading) {
+            List {
+                if (viewModel.airQualities != nil) {
+                    ForEach(0..<viewModel.airQualities!.count) { i in
+                        Section {
+                            AirQualityDetailsItemView(airQuality: viewModel.airQualities![i])
+                        }
                     }
                 }
             }
-        }
-        .navigationBarTitle("Air Quality Details")
-        .onAppear {
-            viewModel.fetchAirQualities()
+            .navigationBarTitle("Air Quality Details")
         }
     }
 }
