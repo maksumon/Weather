@@ -7,10 +7,12 @@
 
 import Foundation
 import SwiftLocation
+import SwiftUI
 
 class LocationSearchViewModel : ObservableObject {
     @Published var cities: [City] = []
     @Published var isLoading = false
+    @Published var isCityAdded = false
     
     func searchLocation(query: String) {
         self.isLoading = true
@@ -84,5 +86,11 @@ class LocationSearchViewModel : ObservableObject {
                 self.isLoading = false
             }
         }
+    }
+    
+    func addCity(city: City) {
+        self.isLoading = true
+        isCityAdded = DBHelper.shared.insertCity(city: city)
+        self.isLoading = false
     }
 }
