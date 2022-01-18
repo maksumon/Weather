@@ -29,7 +29,6 @@ struct SideMenuView: View {
             .background(Color(red: 32/255, green: 32/255, blue: 32/255))
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("Weather Around")
-            .listStyle(.grouped)
             .alert(isPresented: $showConfirmationAlert) {
                 Alert(
                     title: Text("Confirmation"),
