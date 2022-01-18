@@ -48,6 +48,7 @@
 		9FC15CC027909EDE008131C5 /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC15CBF27909EDE008131C5 /* LocationSearchViewModel.swift */; };
 		9FC15CC227909FA3008131C5 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC15CC127909FA3008131C5 /* City.swift */; };
 		9FC15CD427952AAC008131C5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC15CD327952AAC008131C5 /* LoadingView.swift */; };
+		9FC15CD62795DE83008131C5 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC15CD52795DE83008131C5 /* SideMenuViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		9FC15CBF27909EDE008131C5 /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
 		9FC15CC127909FA3008131C5 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		9FC15CD327952AAC008131C5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		9FC15CD52795DE83008131C5 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 				9F06A5E2278DEB9700C7E5B4 /* WeatherViewModel.swift */,
 				9F26926D278F46550073580F /* AirQualityDetailsViewModel.swift */,
 				9FC15CBF27909EDE008131C5 /* LocationSearchViewModel.swift */,
+				9FC15CD52795DE83008131C5 /* SideMenuViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				9F06A5CA278DDA7B00C7E5B4 /* Hour.swift in Sources */,
 				9FC15CBB279016FA008131C5 /* LocationSearchView.swift in Sources */,
 				9F26926C278F46240073580F /* AirQualityDetailsView.swift in Sources */,
+				9FC15CD62795DE83008131C5 /* SideMenuViewModel.swift in Sources */,
 				9F06A5D0278DDAD200C7E5B4 /* Forecastday.swift in Sources */,
 				9F06A5DB278DDD6400C7E5B4 /* API.swift in Sources */,
 				9FC15CC227909FA3008131C5 /* City.swift in Sources */,
