@@ -13,33 +13,43 @@ struct LocationSearchView: View {
     @ObservedObject var viewModel = LocationSearchViewModel()
     
     var body: some View {
-        VStack {
-            HStack {
-                TextField(
-                    "Search Location Here",
-                    text: $text,
-                    onCommit: {
-                        if !self.text.isEmpty {
-                            viewModel.searchLocation(query: self.text)
+        LoadingView(isShowing: $viewModel.isLoading) {
+            VStack {
+                HStack {
+                    TextField(
+                        "Search Location Here",
+                        text: $text,
+                        onCommit: {
+                            if !self.text.isEmpty {
+                                viewModel.searchLocation(query: self.text)
+                            }
+                        }
+                    ).textFieldStyle(.roundedBorder)
+                    if !self.text.isEmpty {
+                        Button(action: {
+                            self.text = ""
+                        }) {
+                            Image(systemName: "multiply.circle")
                         }
                     }
-                ).textFieldStyle(.roundedBorder)
-                if !self.text.isEmpty {
-                    Button(action: {
-                        self.text = ""
-                    }) {
-                        Image(systemName: "multiply.circle")
+                }.padding()
+                Spacer()
+                List {
+                    if (viewModel.cities.count > 0) {
+                        ForEach(0..<viewModel.cities.count, id: \.self) { i in
+                            Text("\(viewModel.cities[i].name), \(viewModel.cities[i].country)")
+                                .onTapGesture {
+                                    viewModel.addCity(city: viewModel.cities[i])
+                                }.alert(isPresented: $viewModel.isCityAdded) {
+                                    Alert(
+                                        title: Text("Success"),
+                                        message: Text("City Added Successfully")
+                                    )
+                                }
+                        }
                     }
-                }
-            }.padding()
-            Spacer()
-            List {
-                if (viewModel.cities.count > 0) {
-                    ForEach(0..<viewModel.cities.count, id: \.self) { i in
-                        Text("\(viewModel.cities[i].name), \(viewModel.cities[i].country)")
-                    }
-                }
-            }.listStyle(.plain)
+                }.listStyle(.plain)
+            }
         }
         .navigationTitle("Search Location")
     }
