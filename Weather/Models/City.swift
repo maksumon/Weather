@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import GRDB
 
-struct City: Codable {
+struct City: Codable, FetchableRecord, PersistableRecord {
     let id: Int64?
     var name, country: String
     var latitude, longitude: Double

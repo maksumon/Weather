@@ -46,4 +46,62 @@ class DBHelper {
         }
         return nil
     }
+
+    func fetchCities() -> [City]? {
+        do {
+            let cities = try DBHelper.shared.dbQueue!.read { db in
+                try City.fetchAll(db)
+            }
+            return cities
+        } catch {
+            debugPrint(error)
+        }
+        return nil
+    }
+
+    func insertCity(city: City) -> Bool {
+        var success = false
+        var existedCity: City?
+        
+        do {
+            try DBHelper.shared.dbQueue!.read { db in
+                existedCity = try City.filter(Column("name") == city.name).fetchOne(db)
+            }
+        } catch {
+            debugPrint(error)
+        }
+        
+        do {
+            if existedCity == nil {
+                try DBHelper.shared.dbQueue!.write { db in
+                    try db.execute(
+                            sql: "INSERT INTO city (name, country, latitude, longitude) VALUES (?, ?, ?, ?)",
+                            arguments: [city.name, city.country, city.latitude, city.longitude]
+                    )
+                    success = true
+                }
+            } else {
+                debugPrint("\(city.name) already exists in DB")
+                success = false
+            }
+        } catch {
+            debugPrint(error)
+        }
+        
+        return success
+    }
+    
+    func deleteCity(city: City) -> Bool {
+        var success = false
+        
+        do {
+            try DBHelper.shared.dbQueue!.write { db in
+                success = try City.deleteOne(db, key: city.id)
+            }
+        } catch {
+            debugPrint(error)
+        }
+        
+        return success
+    }
 }
