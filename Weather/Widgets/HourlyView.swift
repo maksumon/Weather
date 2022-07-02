@@ -18,7 +18,7 @@ struct HourlyView: View {
     var body: some View {
         ScrollView (.horizontal, showsIndicators: false) {
             HStack(spacing: 5) {
-                ForEach(0..<self.hours.count) { i in
+                ForEach(0..<self.hours.count, id: \.self) { i in
                     VStack(spacing: 5) {
                         NetworkImage(url: URL(string: "https:\((self.hours[i].condition?.icon)!)"))
                           .scaledToFit()

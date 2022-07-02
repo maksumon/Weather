@@ -15,7 +15,7 @@ struct AirQualityDetailsView: View {
         LoadingView(isShowing: $viewModel.isLoading) {
             List {
                 if (viewModel.airQualities != nil) {
-                    ForEach(0..<viewModel.airQualities!.count) { i in
+                    ForEach(0..<viewModel.airQualities!.count, id: \.self) { i in
                         Section {
                             AirQualityDetailsItemView(airQuality: viewModel.airQualities![i])
                         }

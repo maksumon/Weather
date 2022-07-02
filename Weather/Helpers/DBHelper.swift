@@ -65,7 +65,7 @@ class DBHelper {
         
         do {
             try DBHelper.shared.dbQueue!.read { db in
-                existedCity = try City.filter(Column("name") == city.name).fetchOne(db)
+                existedCity = try City.filter(Column("name") == city.name && Column("country") == city.country).fetchOne(db)
             }
         } catch {
             debugPrint(error)
@@ -74,10 +74,17 @@ class DBHelper {
         do {
             if existedCity == nil {
                 try DBHelper.shared.dbQueue!.write { db in
-                    try db.execute(
-                            sql: "INSERT INTO city (name, country, latitude, longitude) VALUES (?, ?, ?, ?)",
-                            arguments: [city.name, city.country, city.latitude, city.longitude]
-                    )
+                    if city.current == 1 {
+                        try db.execute(
+                                sql: "INSERT INTO city (name, country, latitude, longitude, current) VALUES (?, ?, ?, ?, ?)",
+                                arguments: [city.name, city.country, city.latitude, city.longitude, city.current]
+                        )
+                    } else {
+                        try db.execute(
+                                sql: "INSERT INTO city (name, country, latitude, longitude) VALUES (?, ?, ?, ?)",
+                                arguments: [city.name, city.country, city.latitude, city.longitude]
+                        )
+                    }
                     success = true
                 }
             } else {

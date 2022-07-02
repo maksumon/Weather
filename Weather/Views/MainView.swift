@@ -75,7 +75,8 @@ struct MainView: View {
                 .navigationBarTitle(
                     viewModel.weather != nil
                         ? (viewModel.weather?.location?.name)!
-                        : "Weather")
+                        : "Weather"
+                )
                 .navigationBarItems(
                     leading: (
                         Button(

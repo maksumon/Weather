@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SideMenuView: View {
     @State private var showConfirmationAlert = false
+    @State private var showUnableAlert = false
     @State private var selectedIndexSet: IndexSet?
     @ObservedObject var viewModel = SideMenuViewModel()
     
@@ -20,8 +21,14 @@ struct SideMenuView: View {
                         Text("\(viewModel.cities![i].name), \(viewModel.cities![i].country)")
                             .font(.system(size: 16))
                     }.onDelete { indexSet in
-                        self.selectedIndexSet = indexSet
-                        self.showConfirmationAlert = true
+                        let city = indexSet.map { viewModel.cities![$0] }.first
+                        
+                        if city!.current == 1 {
+                            self.showUnableAlert = true
+                        } else {
+                            self.selectedIndexSet = indexSet
+                            self.showConfirmationAlert = true
+                        }
                     }
                 }
             }
@@ -29,6 +36,15 @@ struct SideMenuView: View {
             .background(Color(red: 32/255, green: 32/255, blue: 32/255))
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("Weather Around")
+            .alert(isPresented: $showUnableAlert) {
+                Alert(
+                    title: Text("Oops!"),
+                    message: Text("Unable to remove current GPS located city"),
+                    dismissButton: Alert.Button.default(
+                        Text("Okay")
+                    )
+                )
+            }
             .alert(isPresented: $showConfirmationAlert) {
                 Alert(
                     title: Text("Confirmation"),

@@ -16,7 +16,7 @@ struct ForecastsView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            ForEach(1..<self.forecast.forecastday!.count) { i in
+            ForEach(1..<self.forecast.forecastday!.count, id: \.self) { i in
                 ForecastView(forecastDay: self.forecast.forecastday![i])
                 if (i == 1) {
                     Divider()
