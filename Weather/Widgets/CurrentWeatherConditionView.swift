@@ -30,6 +30,7 @@ struct CurrentWeatherConditionView: View {
                 Spacer()
                 NetworkImage(url: URL(string: "https:\((currentWeather.condition?.icon)!)"))
                     .scaledToFit()
+                    .frame(width: 44, height: 44)
             }
             LazyVGrid(columns: threeColumnGrid, spacing: 10) {
                 VStack(alignment: .center) {
