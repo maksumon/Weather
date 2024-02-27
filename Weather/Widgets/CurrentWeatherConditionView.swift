@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import NetworkImage
 
 struct CurrentWeatherConditionView: View {
     private let currentWeather: Current
@@ -28,9 +27,9 @@ struct CurrentWeatherConditionView: View {
                         .font(.system(size: 16))
                 }
                 Spacer()
-                NetworkImage(url: URL(string: "https:\((currentWeather.condition?.icon)!)"))
-                    .scaledToFit()
+                RemoteImage(url: URL(string: "https:\((currentWeather.condition?.icon)!)")!)
                     .frame(width: 44, height: 44)
+                    .scaledToFit()
             }
             LazyVGrid(columns: threeColumnGrid, spacing: 10) {
                 VStack(alignment: .center) {

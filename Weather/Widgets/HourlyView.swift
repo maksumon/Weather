@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import NetworkImage
 
 struct HourlyView: View {
     private let hours: [Hour]    
@@ -20,9 +19,9 @@ struct HourlyView: View {
             HStack(spacing: 5) {
                 ForEach(0..<self.hours.count, id: \.self) { i in
                     VStack(spacing: 5) {
-                        NetworkImage(url: URL(string: "https:\((self.hours[i].condition?.icon)!)"))
-                          .scaledToFit()
-                          .frame(width: 44, height: 44, alignment: .center)
+                        RemoteImage(url: URL(string: "https:\((self.hours[i].condition?.icon)!)")!)
+                            .frame(width: 44, height: 44, alignment: .center)
+                            .scaledToFit()
                         Text("\(self.hours[i].tempC!, specifier: "%.f")°")
                           .font(.system(size: 14, weight: .bold, design: .default))
                         Text(self.hours[i].time!.formatTime())
