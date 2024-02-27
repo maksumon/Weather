@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A0331252B8E4CC800A40B8D /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0331242B8E4CC800A40B8D /* RemoteImage.swift */; };
 		9F06A59D278DD7C500C7E5B4 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06A59C278DD7C500C7E5B4 /* WeatherApp.swift */; };
 		9F06A59F278DD7C500C7E5B4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06A59E278DD7C500C7E5B4 /* MainView.swift */; };
 		9F06A5A1278DD7CA00C7E5B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F06A5A0278DD7CA00C7E5B4 /* Assets.xcassets */; };
@@ -35,7 +36,6 @@
 		9F26926E278F46550073580F /* AirQualityDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26926D278F46550073580F /* AirQualityDetailsViewModel.swift */; };
 		9F269270278F4B4D0073580F /* AirQualityDetailsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26926F278F4B4D0073580F /* AirQualityDetailsItemView.swift */; };
 		9F8C839F278E8B2C002C4C93 /* CurrentWeatherConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C839E278E8B2C002C4C93 /* CurrentWeatherConditionView.swift */; };
-		9F8C83A2278E8EF3002C4C93 /* NetworkImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9F8C83A1278E8EF3002C4C93 /* NetworkImage */; };
 		9F8C83B0278EC5A6002C4C93 /* HourlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C83AF278EC5A6002C4C93 /* HourlyView.swift */; };
 		9F8C83B3278ECD14002C4C93 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C83B2278ECD14002C4C93 /* StringExtensions.swift */; };
 		9F8C83B5278ED6FA002C4C93 /* AirQualitySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C83B4278ED6FA002C4C93 /* AirQualitySummaryView.swift */; };
@@ -70,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A0331242B8E4CC800A40B8D /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		9F06A599278DD7C500C7E5B4 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F06A59C278DD7C500C7E5B4 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
 		9F06A59E278DD7C500C7E5B4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FC15CB82790117A008131C5 /* SwiftUIRefresh in Frameworks */,
-				9F8C83A2278E8EF3002C4C93 /* NetworkImage in Frameworks */,
 				9F269266278F3CA90073580F /* GRDB in Frameworks */,
 				9FC15CBE27901BD2008131C5 /* SwiftLocation in Frameworks */,
 			);
@@ -262,6 +262,7 @@
 				9F8C83B6278EDAD1002C4C93 /* ForecastView.swift */,
 				9F8C83B8278EDD4E002C4C93 /* ForecastsView.swift */,
 				9F26926F278F4B4D0073580F /* AirQualityDetailsItemView.swift */,
+				6A0331242B8E4CC800A40B8D /* RemoteImage.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -304,7 +305,6 @@
 			);
 			name = Weather;
 			packageProductDependencies = (
-				9F8C83A1278E8EF3002C4C93 /* NetworkImage */,
 				9F269265278F3CA90073580F /* GRDB */,
 				9FC15CB72790117A008131C5 /* SwiftUIRefresh */,
 				9FC15CBD27901BD2008131C5 /* SwiftLocation */,
@@ -382,7 +382,6 @@
 			);
 			mainGroup = 9F06A590278DD7C500C7E5B4;
 			packageReferences = (
-				9F8C83A0278E8EF3002C4C93 /* XCRemoteSwiftPackageReference "NetworkImage" */,
 				9F269264278F3CA90073580F /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 				9FC15CB62790117A008131C5 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
 				9FC15CBC27901BD2008131C5 /* XCRemoteSwiftPackageReference "SwiftLocation" */,
@@ -431,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FC15CD827975381008131C5 /* WeatherView.swift in Sources */,
+				6A0331252B8E4CC800A40B8D /* RemoteImage.swift in Sources */,
 				9F8C83B9278EDD4E002C4C93 /* ForecastsView.swift in Sources */,
 				9F8C83B5278ED6FA002C4C93 /* AirQualitySummaryView.swift in Sources */,
 				9F06A5E0278DE7B300C7E5B4 /* APIHelper.swift in Sources */,
@@ -628,6 +628,7 @@
 				DEVELOPMENT_TEAM = 74J66C6GZ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need location permission to determine the current city to show the current weather data";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need location permission to determine the current city to show the current weather data";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need location permission to determine the current city to show the current weather data";
@@ -662,6 +663,7 @@
 				DEVELOPMENT_TEAM = 74J66C6GZ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need location permission to determine the current city to show the current weather data";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need location permission to determine the current city to show the current weather data";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need location permission to determine the current city to show the current weather data";
@@ -827,14 +829,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		9F8C83A0278E8EF3002C4C93 /* XCRemoteSwiftPackageReference "NetworkImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gonzalezreal/NetworkImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
 		9FC15CB62790117A008131C5 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
@@ -858,11 +852,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9F269264278F3CA90073580F /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;
-		};
-		9F8C83A1278E8EF3002C4C93 /* NetworkImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9F8C83A0278E8EF3002C4C93 /* XCRemoteSwiftPackageReference "NetworkImage" */;
-			productName = NetworkImage;
 		};
 		9FC15CB72790117A008131C5 /* SwiftUIRefresh */ = {
 			isa = XCSwiftPackageProductDependency;
