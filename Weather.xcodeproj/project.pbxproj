@@ -357,7 +357,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					9F06A598278DD7C500C7E5B4 = {
 						CreatedOnToolsVersion = 13.1;
@@ -536,6 +536,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -597,6 +598,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -845,8 +847,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftLocation.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = exactVersion;
+				version = 5.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
