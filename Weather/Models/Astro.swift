@@ -8,7 +8,8 @@
 import Foundation
 
 struct Astro: Codable {
-    let sunrise, sunset, moonPhase, moonIllumination: String?
+    let sunrise, sunset, moonPhase: String?
+    let moonIllumination: Int64?
 
     enum CodingKeys: String, CodingKey {
         case sunrise, sunset
