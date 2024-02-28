@@ -58,9 +58,12 @@ struct MainView: View {
                             self.isPullToRefresh = false
                         }
                         if self.showMenu {
-                            SideMenuView()
-                                .frame(width: geometry.size.width/1.5)
-                                .transition(.move(edge: .leading))
+                            SideMenuView() {selectedCity in 
+                                self.showMenu.toggle()
+                                self.viewModel.fetchWeather(city: selectedCity)
+                            }
+                            .frame(width: geometry.size.width/1.5)
+                            .transition(.move(edge: .leading))
                         }
                         NavigationLink(
                             destination: LocationSearchView(),
