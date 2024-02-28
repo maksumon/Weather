@@ -13,6 +13,11 @@ struct SideMenuView: View {
     @State private var selectedIndexSet: IndexSet?
     @ObservedObject var viewModel = SideMenuViewModel()
     
+    // Callback function type
+    typealias TapAction = (_ selectedCity: String) -> Void
+    // Stored property to hold the callback function
+    var onTapGesture: TapAction
+    
     var body: some View {
         LoadingView(isShowing: $viewModel.isLoading) {
             List {
@@ -20,6 +25,10 @@ struct SideMenuView: View {
                     ForEach(0..<viewModel.cities!.count, id: \.self) { i in
                         Text("\(viewModel.cities![i].name), \(viewModel.cities![i].country)")
                             .font(.system(size: 16))
+                            .onTapGesture {
+                                debugPrint("Tapped on \(viewModel.cities![i].name)")
+                                self.onTapGesture(viewModel.cities![i].name)
+                            }
                     }.onDelete { indexSet in
                         let city = indexSet.map { viewModel.cities![$0] }.first
                         
@@ -73,6 +82,6 @@ struct SideMenuView: View {
 
 struct LocationListView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuView()
+        SideMenuView(){selectedCity in }
     }
 }
