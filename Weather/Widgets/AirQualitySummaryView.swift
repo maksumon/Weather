@@ -17,7 +17,7 @@ struct AirQualitySummaryView: View {
     var body: some View {
         HStack(spacing: 10) {
             Text("\((currentWeather.airQuality?["pm2_5"])!, specifier: "%.2f")")
-                .font(.system(size: 45))
+                .font(.system(size: 40))
             Text("|  PM2.5  |")
                 .font(.system(size: 16))
             Text(Constants.airQualityDefinition[Int((currentWeather.airQuality?["us-epa-index"])!)]!)
